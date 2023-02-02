@@ -2,29 +2,43 @@ form {
     display: flex;
     flex-wrap: nowrap;
     flex-direction: column;
-    width: 50%;
-    margin: 0;
-    padding: 0;
-    align-content: center;
+    align-items: center;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 #title {
     margin-top: 20px;
     height: 25px;
+    width: 50%;
 }
 #content {
     margin-top: 20px;
+    width: 50%;
+}
+.btn-container {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
 }
 .btn {
     margin-top: 20px;
     background-color: #0060A1;
     color: white;
-    border: 2px solid #3d93cc;
+    padding: 5px;
+    border-radius: 4px;
+    border: none;
+}
+.btn :hover {
+    cursor: pointer;
 }
 .btnSave {
-    float: right;
     width: 100px;
 }
 .btnDelete {
     width: 100px;
+}
+.btnPlus {
+    float: right;
+    width: 25px;
 }
