@@ -1,4 +1,29 @@
 form {
     display: flex;
     flex-direction: column;
+    width: 50%;
+    margin: 0;
+    padding: 0;
+    align-content: center;
+}
+
+#title {
+    margin-top: 20px;
+    height: 25px;
+}
+#content {
+    margin-top: 20px;
+}
+.btn {
+    margin-top: 20px;
+    background-color: #0060A1;
+    color: white;
+    border: 2px solid #3d93cc;
+}
+.btnSave {
+    float: right;
+    width: 100px;
+}
+.btnDelete {
+    width: 100px;
 }
