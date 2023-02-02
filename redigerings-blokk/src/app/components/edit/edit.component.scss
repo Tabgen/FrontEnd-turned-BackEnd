@@ -1,4 +1,4 @@
-form {
+.input {
     display: flex;
     flex-wrap: nowrap;
     flex-direction: column;
@@ -7,12 +7,12 @@ form {
     margin-right: 10%;
 }
 
-#title {
+.title {
     margin-top: 20px;
     height: 25px;
     width: 50%;
 }
-#content {
+.content {
     margin-top: 20px;
     width: 50%;
 }
