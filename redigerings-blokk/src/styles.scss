@@ -1,1 +1,182 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+    --white: #FFFFFF;
+    --offwhite: #F8F7F5;
+    --bg-gray: #ECEEF1;
+    --gray: #8a8a8a85;
+    --blue: #0060A1;
+    --offgray: #ccc;
+    --newblack: #282828;
+    font-family: "Open Sans";
+}
+
+html {
+    background-color: var(--offwhite);
+}
+
+h1 {
+    font-family: "Open Sans";
+    color: var(--newblack);
+}
+
+#headline {
+    margin: 0px;
+    padding-top: 5%;
+}
+
+h2, h3 {
+    font-family: "Ubuntu",'Sans-serif', serif;
+    font-size: 24px;
+}
+
+h3 {
+    margin-top: 5%;
+}
+
+p, li {
+    font-family: "Open Sans";
+    font-size: 1rem;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.doc-container {
+    padding: 3% 5% 5% 5%;
+    background-color: var(--white);
+    width: 50%;
+    box-shadow: 0 0 3px var(--offgray);
+}
+
+.doc-container h2 {
+    font-size: 32px;
+}
+
+.slider-alignment {
+    display: flex;
+    justify-content: center;
+}
+
+.slider-container {
+    background-color: var(--bg-gray);
+    width: 329px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 35px;
+    margin-top: 50px;
+}
+
+.slider {
+    width: 159px;
+    height: 27px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    background-color: var(--bg-gray);
+}
+
+#info {
+    background-color: var(--blue);
+    color: var(--white);
+}
+
+.feedback-alignment {
+    padding-top: 5%;
+}
+
+.feedback-text h2 {
+    margin: 0px;
+}
+
+.feedback-text i{
+    font-family: "Open Sans";
+    font-size: 1rem;
+}
+
+.form-alignment {
+    margin-top: 7%;
+    display: flex;
+    justify-content: center;
+}
+
+.form-inputs {
+    width: 80%;
+}
+
+.form-inputs h3 {  
+    font-size: 1rem;
+    margin: 0px;
+    margin-top: 15px;
+}
+
+.form-input {
+    border: 1px solid var(--gray);
+    width: 99%;
+    height: 25px;
+}
+
+#message {
+    resize: none;
+    border: 1px solid var(--gray);
+    width: 99%;
+    height: 100px;
+    font-size: 0.8rem;
+}
+
+.submit-align {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+#submit {
+    margin-top: 10px;
+    border: none;
+    background-color: var(--blue);
+    color: var(--white);
+    border-radius: 6px;
+    width: 100px;
+    height: 30px;
+    cursor: pointer;
+    font-family: "Ubuntu";
+}
+
+
+
+@media only screen and (max-width: 700px) {
+    h1 {
+        font-size: 1rem;
+    }
+    
+    .doc-container h2 {
+        font-size: 24px;
+    }
+    
+    h3 {
+        font-size: 20px;
+        margin-top: 10%;
+    }
+    
+    p, li {
+        font-size: 14px;
+    }
+    
+    .doc-container {
+        width: 85%;
+    }
+    
+    .slider-container {
+        width: 90%;
+    }
+    
+    .slider {
+        width: 40%;
+    }
+    
+  }
