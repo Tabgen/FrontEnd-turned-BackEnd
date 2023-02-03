@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output } from '@angular/core';
 
 @Component({
   selector: 'app-edit',
@@ -13,7 +13,7 @@ export class EditComponent {
     //the previous form is turned into a section
     let oldInputTitle = (document.getElementById('title') as HTMLInputElement).value;
     let oldInputContent = (document.getElementById('content') as HTMLInputElement).value;
-
+  
     let oldTitle = document.getElementById('title');
     let oldContent = document.getElementById('content');
     let oldBtns = document.getElementById('btn-container');
@@ -47,8 +47,17 @@ export class EditComponent {
     h2Title.innerHTML = oldInputTitle;
     pContent.innerHTML = oldInputContent;
 
-    //TODO: Make a for loop that checks if the id is available for the section. 
-    //The id patter is going to be SEC-x
+    //checks if the id is available and assigns a availbale id to the section
+
+    for ( let i = 1; 1 < 100; i++ ) {
+      let sectionID = "SEC-" + i;
+      let test = document.getElementById(sectionID);
+      if (test != null) {
+      } else {
+          newSection.id = sectionID;
+          break;
+      }
+  }
 
     
 
@@ -69,53 +78,64 @@ export class EditComponent {
     let oldTitle = document.getElementById('title');
     //the previous form is turned into a section
     if (oldTitle != null) {
-        let doc = document.getElementById('doc-container');
-    
-        //the previous form is turned into a section
-        let oldInputTitle = (document.getElementById('title') as HTMLInputElement).value;
-        let oldInputContent = (document.getElementById('content') as HTMLInputElement).value;
-    
-        let oldTitle = document.getElementById('title');
-        let oldContent = document.getElementById('content');
-        let oldBtns = document.getElementById('btn-container');
-        let oldExplanation = document.getElementById('explanation');
-        let oldCreate = document.getElementById('create');
-    
-        if (oldTitle != null) {
-          oldTitle.remove();
-        }
-    
-        if (oldContent != null) {
-          oldContent.remove();
-        }
-    
-        if (oldBtns != null) {
-          oldBtns.remove();
-        } 
-    
-        if (oldExplanation != null) {
-          oldExplanation.remove();
-        }
+      let doc = document.getElementById('doc-container');
+      
+      //the previous form is turned into a section
+      let oldInputTitle = (document.getElementById('title') as HTMLInputElement).value;
+      let oldInputContent = (document.getElementById('content') as HTMLInputElement).value;
   
-        if(oldCreate != null) {
-          oldCreate.remove();
-        }
-    
-        let newSection = document.createElement('section');
-        let h2Title = document.createElement('h2');
-        let pContent = document.createElement('p');
-    
-        h2Title.innerHTML = oldInputTitle;
-        pContent.innerHTML = oldInputContent;
-    
-        newSection.appendChild(h2Title);
-        newSection.appendChild(pContent);
-    
-        if (doc != null) {
-          doc.appendChild(newSection);
+      let oldTitle = document.getElementById('title');
+      let oldContent = document.getElementById('content');
+      let oldBtns = document.getElementById('btn-container');
+      let oldExplanation = document.getElementById('explanation');
+      let oldCreate = document.getElementById('create');
+  
+      if (oldTitle != null) {
+        oldTitle.remove();
+      }
+  
+      if (oldContent != null) {
+        oldContent.remove();
+      }
+  
+      if (oldBtns != null) {
+        oldBtns.remove();
+      } 
+  
+      if (oldExplanation != null) {
+        oldExplanation.remove();
+      }
+  
+      if(oldCreate != null) {
+        oldCreate.remove();
+      }
+  
+      let newSection = document.createElement('section');
+      let h2Title = document.createElement('h2');
+      let pContent = document.createElement('p');
+  
+      h2Title.innerHTML = oldInputTitle;
+      pContent.innerHTML = oldInputContent;
+  
+      //checks if the id is available and assigns a availbale id to the section  
+  
+      for ( let i = 1; 1 < 100; i++ ) {
+        let sectionID = "SEC-" + i;
+        let test = document.getElementById(sectionID);
+        if (test != null) {
         } else {
-          alert('Error');
+            newSection.id = sectionID;
+            break;
         }
+    }
+      newSection.appendChild(h2Title);
+      newSection.appendChild(pContent);
+  
+      if (doc != null) {
+        doc.appendChild(newSection);
+      } else {
+        alert('Error');
+      }
 
     } 
 
@@ -168,7 +188,7 @@ export class EditComponent {
     //The make function is repeated her so that the event listener can reach it
     function make() {
       let doc = document.getElementById('doc-container');
-  
+      
       //the previous form is turned into a section
       let oldInputTitle = (document.getElementById('title') as HTMLInputElement).value;
       let oldInputContent = (document.getElementById('content') as HTMLInputElement).value;
@@ -194,7 +214,7 @@ export class EditComponent {
       if (oldExplanation != null) {
         oldExplanation.remove();
       }
-
+  
       if(oldCreate != null) {
         oldCreate.remove();
       }
@@ -206,6 +226,19 @@ export class EditComponent {
       h2Title.innerHTML = oldInputTitle;
       pContent.innerHTML = oldInputContent;
   
+      //checks if the id is available and assigns a availbale id to the section
+  
+      for ( let i = 1; 1 < 100; i++ ) {
+        let sectionID = "SEC-" + i;
+        let test = document.getElementById(sectionID);
+        if (test != null) {
+
+        } else {
+            console.log(sectionID);
+            newSection.id = sectionID;
+            break;
+        }
+    }
       newSection.appendChild(h2Title);
       newSection.appendChild(pContent);
   
