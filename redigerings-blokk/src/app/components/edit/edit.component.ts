@@ -9,8 +9,7 @@ export class EditComponent {
 
   make() {
     let doc = document.getElementById('doc-container');
-
-
+    
     //the previous form is turned into a section
     let oldInputTitle = (document.getElementById('title') as HTMLInputElement).value;
     let oldInputContent = (document.getElementById('content') as HTMLInputElement).value;
@@ -19,11 +18,27 @@ export class EditComponent {
     let oldContent = document.getElementById('content');
     let oldBtns = document.getElementById('btn-container');
     let oldExplanation = document.getElementById('explanation');
+    let oldCreate = document.getElementById('create');
 
-    oldTitle.remove();
-    oldContent.remove();
-    oldBtns.remove();
-    oldExplanation.remove();
+    if (oldTitle != null) {
+      oldTitle.remove();
+    }
+
+    if (oldContent != null) {
+      oldContent.remove();
+    }
+
+    if (oldBtns != null) {
+      oldBtns.remove();
+    } 
+
+    if (oldExplanation != null) {
+      oldExplanation.remove();
+    }
+
+    if(oldCreate != null) {
+      oldCreate.remove();
+    }
 
     let newSection = document.createElement('section');
     let h2Title = document.createElement('h2');
@@ -40,40 +55,66 @@ export class EditComponent {
     } else {
       alert('Error');
     }
-  }
+  };
 
   newSection() {
     let doc = document.getElementById('doc-container');
-
-    //the previous form is turned into a section
-    let oldInputTitle = (document.getElementById('title') as HTMLInputElement).value;
-    let oldInputContent = (document.getElementById('content') as HTMLInputElement).value;
-
     let oldTitle = document.getElementById('title');
-    let oldContent = document.getElementById('content');
-    let oldBtns = document.getElementById('btn-container');
-    let oldExplanation = document.getElementById('explanation');
+    //the previous form is turned into a section
+    if (oldTitle != null) {
+        let doc = document.getElementById('doc-container');
+    
+        //the previous form is turned into a section
+        let oldInputTitle = (document.getElementById('title') as HTMLInputElement).value;
+        let oldInputContent = (document.getElementById('content') as HTMLInputElement).value;
+    
+        let oldTitle = document.getElementById('title');
+        let oldContent = document.getElementById('content');
+        let oldBtns = document.getElementById('btn-container');
+        let oldExplanation = document.getElementById('explanation');
+        let oldCreate = document.getElementById('create');
+    
+        if (oldTitle != null) {
+          oldTitle.remove();
+        }
+    
+        if (oldContent != null) {
+          oldContent.remove();
+        }
+    
+        if (oldBtns != null) {
+          oldBtns.remove();
+        } 
+    
+        if (oldExplanation != null) {
+          oldExplanation.remove();
+        }
+  
+        if(oldCreate != null) {
+          oldCreate.remove();
+        }
+    
+        let newSection = document.createElement('section');
+        let h2Title = document.createElement('h2');
+        let pContent = document.createElement('p');
+    
+        h2Title.innerHTML = oldInputTitle;
+        pContent.innerHTML = oldInputContent;
+    
+        newSection.appendChild(h2Title);
+        newSection.appendChild(pContent);
+    
+        if (doc != null) {
+          doc.appendChild(newSection);
+        } else {
+          alert('Error');
+        }
 
-    oldTitle.remove();
-    oldContent.remove();
-    oldBtns.remove();
-    oldExplanation.remove();
+    } 
 
-    let newSection = document.createElement('section');
-    let h2Title = document.createElement('h2');
-    let pContent = document.createElement('p');
 
-    h2Title.innerHTML = oldInputTitle;
-    pContent.innerHTML = oldInputContent;
+    
 
-    newSection.appendChild(h2Title);
-    newSection.appendChild(pContent);
-
-    if (doc != null) {
-      doc.appendChild(newSection);
-    } else {
-      alert('Error');
-    }
     
 
     //The elements get created
@@ -115,8 +156,59 @@ export class EditComponent {
     
     del.style.display = 'none';
     save.style.display = 'none';
-    create.setAttribute('(click)', 'make()');
+    create.addEventListener("click", make);
+    
+    //The make function is repeated her so that the event listener can reach it
+    function make() {
+      let doc = document.getElementById('doc-container');
   
+      //the previous form is turned into a section
+      let oldInputTitle = (document.getElementById('title') as HTMLInputElement).value;
+      let oldInputContent = (document.getElementById('content') as HTMLInputElement).value;
+  
+      let oldTitle = document.getElementById('title');
+      let oldContent = document.getElementById('content');
+      let oldBtns = document.getElementById('btn-container');
+      let oldExplanation = document.getElementById('explanation');
+      let oldCreate = document.getElementById('create');
+  
+      if (oldTitle != null) {
+        oldTitle.remove();
+      }
+  
+      if (oldContent != null) {
+        oldContent.remove();
+      }
+  
+      if (oldBtns != null) {
+        oldBtns.remove();
+      } 
+  
+      if (oldExplanation != null) {
+        oldExplanation.remove();
+      }
+
+      if(oldCreate != null) {
+        oldCreate.remove();
+      }
+  
+      let newSection = document.createElement('section');
+      let h2Title = document.createElement('h2');
+      let pContent = document.createElement('p');
+  
+      h2Title.innerHTML = oldInputTitle;
+      pContent.innerHTML = oldInputContent;
+  
+      newSection.appendChild(h2Title);
+      newSection.appendChild(pContent);
+  
+      if (doc != null) {
+        doc.appendChild(newSection);
+      } else {
+        alert('Error');
+      }
+    };
+
     //The elements get assigned their ids
     form.id = 'input';
     explanation.id = 'explanation';
