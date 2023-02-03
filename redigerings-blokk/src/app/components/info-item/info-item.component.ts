@@ -9,4 +9,7 @@ import { Info } from '../../Info'
 export class InfoItemComponent {
   @Input() info!: Info;
 
+  title = "";
+  text = "";
+
 }
