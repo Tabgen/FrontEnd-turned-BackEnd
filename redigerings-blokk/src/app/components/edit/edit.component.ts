@@ -8,6 +8,36 @@ import { Component } from '@angular/core';
 export class EditComponent {
 
   newSection() {
+    let doc = document.getElementById('doc-container');
+
+
+    //the previous form is turned into a section
+    let oldInputTitle = (document.getElementById('title') as HTMLInputElement).value;
+    let oldInputContent = (document.getElementById('content') as HTMLInputElement).value;
+
+    let oldTitle = document.getElementById('title');
+    let oldContent = document.getElementById('content');
+    
+    oldTitle.remove();
+    oldContent.remove();
+
+    let newSection = document.createElement('section');
+    let h2Title = document.createElement('h2');
+    let pContent = document.createElement('p');
+
+    h2Title.innerHTML = oldInputTitle;
+    pContent.innerHTML = oldInputContent;
+
+    newSection.appendChild(h2Title);
+    newSection.appendChild(pContent);
+
+    if (doc != null) {
+      doc.appendChild(newSection);
+    } else {
+      alert('Error');
+    }
+    
+
     //The elements get created
     let form = document.createElement('form');
     let title = document.createElement('input');
@@ -17,45 +47,62 @@ export class EditComponent {
     let save = document.createElement('button');
     let create = document.createElement('button');
     
+    let btnContainer = document.createElement('div');
+
     //The elements get assigned their classnames
     form.className = 'input';
     title.className = 'title';
     content.className = 'content';
+    btnContainer.className = 'btn-container';
 
     del.className = 'btn';
-    del.className = 'btnDelete';
+    del.className = 'btn';
+    del.classList.add('btnDelete');
 
     save.className = 'btn';
-    save.className = 'btnSave';
+    save.classList.add('btnSave');
+
 
     create.className = 'btn';
-    create.className = 'btnCreate';
+    create.classList.add('btnCreate');
 
+
+    //The elements get their attributes assigned
+    content.setAttribute('cols', '30');
+    content.setAttribute('rows', '10');
+    content.setAttribute('placeholder', 'Content');
+
+    title.setAttribute('placeholder', 'Title');
+    
+    del.style.display = 'none';
+    save.style.display = 'none';
+  
     //The elements get assigned their ids
-    form.id = '?';
-    title.id = '?';
-    content.id = '?';
+    form.id = 'input';
+    title.id = 'title';
+    content.id = 'content';
 
-    del.id = '?';
-    save.id = '?';
-    create.id = '?';
+    del.id = 'delete';
+    save.id = 'save';
+    create.id = 'create';
 
     //The buttons gets their innerHTML added
     del.innerHTML = "Slett"
     save.innerHTML = "Lagre"
     create.innerHTML = "Lag"
 
-    //The elements get appended into the form
+    //The buttons get appended into the btn-container
+    btnContainer.appendChild(create);
+    btnContainer.appendChild(save);
+    btnContainer.appendChild(del);
 
+    //The elements get appended into the form
     form.appendChild(title);
     form.appendChild(content);
-    form.appendChild(del);
-    form.appendChild(save);
-    form.appendChild(create);
+    form.appendChild(btnContainer);
+
 
     //The form gets appended to the page
-
-    let doc = document.getElementById('doc-container');
     if (doc != null) {
       doc.appendChild(form);
     } else {
@@ -68,7 +115,6 @@ export class EditComponent {
     let inputTitle = (document.getElementById('title-placeholder') as HTMLInputElement).value;
     let inputContent = (document.getElementById('content-placeholder') as HTMLInputElement).value;
     
-
 
   }
 

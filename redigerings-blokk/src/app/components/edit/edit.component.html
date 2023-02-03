@@ -1,10 +1,10 @@
-<form class="input">
+<form class="input" id="input">
     <h1>Legg til ny tekst</h1>
     <input type="text" id="title" class="title" placeholder="Title">
     <textarea name="" id="content" class="content" cols="30" rows="10" placeholder="Content"></textarea>
     <div class="btn-container">
-        <button class="btn btnSave">Lagre</button>
-        <button class="btn btnDelete">Slett</button>
+        <button class="btn btnSave" id="save">Lagre</button>
+        <button class="btn btnDelete" id="delete">Slett</button>
     </div>
 </form>
 <button class="btn btnPlus" (click)="newSection()">+</button>
