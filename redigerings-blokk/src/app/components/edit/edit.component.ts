@@ -1,4 +1,5 @@
-import { Component, Output } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
+import { Info } from '../../Info';
 
 @Component({
   selector: 'app-edit',
@@ -6,6 +7,10 @@ import { Component, Output } from '@angular/core';
   styleUrls: ['./edit.component.scss']
 })
 export class EditComponent {
+  @Output() onAddText: EventEmitter<Info> = new EventEmitter();
+  id?: string;
+  title: string;
+  text: string;
 
   make() {
     let doc = document.getElementById('doc-container');
@@ -57,10 +62,11 @@ export class EditComponent {
           newSection.id = sectionID;
           break;
       }
-  }
+    }
 
     
-
+    let secID = newSection.id;
+    console.log(secID);
 
 
     newSection.appendChild(h2Title);
@@ -71,6 +77,16 @@ export class EditComponent {
     } else {
       alert('Error');
     }
+
+    const newText: Info = {
+      id: secID,
+      title: oldInputTitle,
+      text: oldInputContent,
+    };
+
+    this.onAddText.emit(newText);
+
+    
   };
 
   newSection() {
@@ -289,6 +305,7 @@ export class EditComponent {
     let inputTitle = (document.getElementById('title-placeholder') as HTMLInputElement).value;
     let inputContent = (document.getElementById('content-placeholder') as HTMLInputElement).value;
     
+
 
   }
 
