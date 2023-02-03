@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class EditComponent {
 
-  newSection() {
+  make() {
     let doc = document.getElementById('doc-container');
 
 
@@ -17,9 +17,47 @@ export class EditComponent {
 
     let oldTitle = document.getElementById('title');
     let oldContent = document.getElementById('content');
-    
+    let oldBtns = document.getElementById('btn-container');
+    let oldExplanation = document.getElementById('explanation');
+
     oldTitle.remove();
     oldContent.remove();
+    oldBtns.remove();
+    oldExplanation.remove();
+
+    let newSection = document.createElement('section');
+    let h2Title = document.createElement('h2');
+    let pContent = document.createElement('p');
+
+    h2Title.innerHTML = oldInputTitle;
+    pContent.innerHTML = oldInputContent;
+
+    newSection.appendChild(h2Title);
+    newSection.appendChild(pContent);
+
+    if (doc != null) {
+      doc.appendChild(newSection);
+    } else {
+      alert('Error');
+    }
+  }
+
+  newSection() {
+    let doc = document.getElementById('doc-container');
+
+    //the previous form is turned into a section
+    let oldInputTitle = (document.getElementById('title') as HTMLInputElement).value;
+    let oldInputContent = (document.getElementById('content') as HTMLInputElement).value;
+
+    let oldTitle = document.getElementById('title');
+    let oldContent = document.getElementById('content');
+    let oldBtns = document.getElementById('btn-container');
+    let oldExplanation = document.getElementById('explanation');
+
+    oldTitle.remove();
+    oldContent.remove();
+    oldBtns.remove();
+    oldExplanation.remove();
 
     let newSection = document.createElement('section');
     let h2Title = document.createElement('h2');
@@ -40,6 +78,7 @@ export class EditComponent {
 
     //The elements get created
     let form = document.createElement('form');
+    let explanation = document.createElement('h1');
     let title = document.createElement('input');
     let content = document.createElement('textarea');
 
@@ -76,9 +115,11 @@ export class EditComponent {
     
     del.style.display = 'none';
     save.style.display = 'none';
+    create.setAttribute('(click)', 'make()');
   
     //The elements get assigned their ids
     form.id = 'input';
+    explanation.id = 'explanation';
     title.id = 'title';
     content.id = 'content';
 
@@ -97,6 +138,7 @@ export class EditComponent {
     btnContainer.appendChild(del);
 
     //The elements get appended into the form
+    form.appendChild(explanation);
     form.appendChild(title);
     form.appendChild(content);
     form.appendChild(btnContainer);
