@@ -47,6 +47,13 @@ export class EditComponent {
     h2Title.innerHTML = oldInputTitle;
     pContent.innerHTML = oldInputContent;
 
+    //TODO: Make a for loop that checks if the id is available for the section. 
+    //The id patter is going to be SEC-x
+
+    
+
+
+
     newSection.appendChild(h2Title);
     newSection.appendChild(pContent);
 

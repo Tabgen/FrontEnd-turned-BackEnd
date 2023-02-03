@@ -58,6 +58,8 @@ html {
     width: 100px;
 }
 .btnPlus {
+    position: sticky;
+    top: 100%;
     float: right;
     width: 25px;
 }
