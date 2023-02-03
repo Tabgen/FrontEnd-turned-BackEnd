@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { ViewComponent } from './components/view/view.component';
 import { EditComponent } from './components/edit/edit.component';
 import { InfoComponent } from './components/info/info.component';
+import { InfoItemComponent } from './components/info-item/info-item.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ViewComponent,
     EditComponent,
-    InfoComponent
+    InfoComponent,
+    InfoItemComponent
   ],
   imports: [
     BrowserModule,
