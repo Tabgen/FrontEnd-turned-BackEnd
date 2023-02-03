@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from "@angular/forms";
+import { RichTextEditorModule, ToolbarService, LinkService, ImageService, HtmlEditorService } from '@syncfusion/ej2-angular-richtexteditor';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,9 +20,10 @@ import { InfoItemComponent } from './components/info-item/info-item.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RichTextEditorModule
   ],
-  providers: [],
+  providers: [ToolbarService, LinkService, ImageService, HtmlEditorService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

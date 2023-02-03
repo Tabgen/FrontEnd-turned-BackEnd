@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import { Info } from '../../Info'
 import { INFO } from '../../mock-info'
 
@@ -7,7 +7,18 @@ import { INFO } from '../../mock-info'
   templateUrl: './info.component.html',
   styleUrls: ['./info.component.scss']
 })
-export class InfoComponent {
+export class InfoComponent implements OnInit {
+  @ViewChild('editor') editor: any;
+
   info: Info[] = INFO;
+
+  constructor() { }
+
+  ngOnInit() {
+  }
+
+  onClick() {
+    console.log['ohoo']
+  }
 
 }
