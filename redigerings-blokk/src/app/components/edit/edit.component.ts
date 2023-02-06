@@ -46,10 +46,10 @@ export class EditComponent {
     }
 
     let newSection = document.createElement('section');
-    let h2Title = document.createElement('h2');
+    let h3Title = document.createElement('h3');
     let pContent = document.createElement('p');
 
-    h2Title.innerHTML = oldInputTitle;
+    h3Title.innerHTML = oldInputTitle;
     pContent.innerHTML = oldInputContent;
 
     //checks if the id is available and assigns a availbale id to the section
@@ -69,7 +69,7 @@ export class EditComponent {
     console.log(secID);
 
 
-    newSection.appendChild(h2Title);
+    newSection.appendChild(h3Title);
     newSection.appendChild(pContent);
 
     if (doc != null) {
@@ -127,10 +127,10 @@ export class EditComponent {
       }
   
       let newSection = document.createElement('section');
-      let h2Title = document.createElement('h2');
+      let h3Title = document.createElement('h3');
       let pContent = document.createElement('p');
   
-      h2Title.innerHTML = oldInputTitle;
+      h3Title.innerHTML = oldInputTitle;
       pContent.innerHTML = oldInputContent;
   
       //checks if the id is available and assigns a availbale id to the section  
@@ -144,7 +144,7 @@ export class EditComponent {
             break;
         }
     }
-      newSection.appendChild(h2Title);
+      newSection.appendChild(h3Title);
       newSection.appendChild(pContent);
   
       if (doc != null) {
@@ -236,10 +236,10 @@ export class EditComponent {
       }
   
       let newSection = document.createElement('section');
-      let h2Title = document.createElement('h2');
+      let h3Title = document.createElement('h3');
       let pContent = document.createElement('p');
   
-      h2Title.innerHTML = oldInputTitle;
+      h3Title.innerHTML = oldInputTitle;
       pContent.innerHTML = oldInputContent;
   
       //checks if the id is available and assigns a availbale id to the section
@@ -255,7 +255,7 @@ export class EditComponent {
             break;
         }
     }
-      newSection.appendChild(h2Title);
+      newSection.appendChild(h3Title);
       newSection.appendChild(pContent);
   
       if (doc != null) {
@@ -278,7 +278,7 @@ export class EditComponent {
     //The buttons gets their innerHTML added
     del.innerHTML = "Slett"
     save.innerHTML = "Lagre"
-    create.innerHTML = "Lag"
+    create.innerHTML = "Lagre"
 
     //The buttons get appended into the btn-container
     btnContainer.appendChild(create);
